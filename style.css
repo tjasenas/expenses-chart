@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(27, 66%, 92%);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    color: hsl(28, 10%, 53%);
+}
+h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0 0 1.5em 0;
+    font-weight: 700;
+    color:hsl(25, 47%, 15%);
+}
+
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.header {
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.header__balance {
+    color: #fff;
+}
+.header__balance--number {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+}
+
+.spendings {
+    background-color: hsl(33, 100%, 98%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.spendings__bars {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.6rem;
+    text-align: center;
+    border-bottom: 1px solid hsl(27, 66%, 92%);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 160px;
+}
+
+.day {
+    align-self: end;
+    position: relative;
+    cursor: pointer;
+}
+.day__column {
+    height: 0px;
+    background-color: hsl(10, 79%, 65%);
+    border-radius: 0.3rem;
+    transition: height 0.3s ease-in-out;
+}
+.day:hover .day__column {
+    opacity: 0.6;
+}
+
+.current-day .day__column{
+    background-color: hsl(186, 34%, 60%);
+}
+
+.day__amount {
+    opacity: 0;
+    position: absolute;
+    top: -2.5rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    background-color: hsl(25, 47%, 15%);
+    color: hsl(33, 100%, 98%);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+.day:hover .day__amount {
+    opacity: 1;
+}
+.day__name {
+    font-size: 0.8rem;
+    padding-top: 0.3rem;
+}
+
+/* Stats */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.stats__total--number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: hsl(25, 47%, 15%);
+} 
+.stats__procents {
+    text-align: right;
+}
+.stats__procents--number {
+    color: hsl(25, 47%, 15%);
+    font-weight: 700;
+}
+
+.footer{
+    text-align: center;
+}
+
+@media (min-width: 450px) {
+    .header__balance--number {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .spendings__bars {
+        gap: 1rem;
+    }
+    .stats__total--number {
+        font-size: 2.5rem;
+    }
+}
+
+
+
